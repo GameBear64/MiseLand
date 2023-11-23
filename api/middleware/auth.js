@@ -3,8 +3,8 @@ const jwt = require('jsonwebtoken');
 const { wildcardMatch } = require('../utils');
 
 let noAuthRoutes = [
-  { path: '/user/login', methods: ['POST'] },
-  { path: '/user/register', methods: ['POST'] },
+  { path: '/login', methods: ['POST'] },
+  { path: '/register', methods: ['POST'] },
   { path: '/recourse/*', methods: ['GET'] },
   { path: '/api-docs/*', methods: ['GET'] },
   { path: '/favicon.ico', methods: ['GET'] },
@@ -12,6 +12,7 @@ let noAuthRoutes = [
 
 exports.checkAuth = async (req, res, next) => {
   let isNoAuthRoute = noAuthRoutes.some(route => wildcardMatch(route.path, req.path) && route.methods.includes(req.method));
+
   if (isNoAuthRoute) return next();
 
   try {

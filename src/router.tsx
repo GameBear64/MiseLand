@@ -35,7 +35,7 @@ export default function Router() {
         </Suspense>
       ),
     },
-  ] as RouteObject;
+  ];
 
   const routes = [
     {
@@ -43,7 +43,7 @@ export default function Router() {
       element: <App />,
       errorElement: <ErrorPage />,
     },
-  ] as RouteObject;
+  ];
 
   const router = createBrowserRouter([
     {
@@ -54,9 +54,9 @@ export default function Router() {
         </Suspense>
       ),
       errorElement: <ErrorPage />,
-      children: [routes],
+      children: routes,
     },
-    authRoutes,
+    ...authRoutes,
     { path: '*', element: <NotFound /> },
   ]);
 

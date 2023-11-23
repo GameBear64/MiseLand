@@ -18,8 +18,11 @@ dependencies:
     specifier: ^3.1.1
     version: 3.1.1(express@4.18.2)
   express-file-routing:
-    specifier: ^3.0.3
-    version: 3.0.3(express@4.18.2)
+    specifier: ^2.1.5
+    version: 2.1.5(express@4.18.2)
+  joi:
+    specifier: ^17.11.0
+    version: 17.11.0
   jsonwebtoken:
     specifier: ^9.0.2
     version: 9.0.2
@@ -32,10 +35,34 @@ dependencies:
 
 packages:
 
+  /@hapi/hoek@9.3.0:
+    resolution: {integrity: sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ==}
+    dev: false
+
+  /@hapi/topo@5.1.0:
+    resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
+    dependencies:
+      '@hapi/hoek': 9.3.0
+    dev: false
+
   /@mongodb-js/saslprep@1.1.1:
     resolution: {integrity: sha512-t7c5K033joZZMspnHg/gWPE4kandgc2OxE74aYOtGKfgB9VPuVJPix0H6fhmm2erj5PBJ21mqcx34lpIGtUCsQ==}
     dependencies:
       sparse-bitfield: 3.0.3
+    dev: false
+
+  /@sideway/address@4.1.4:
+    resolution: {integrity: sha512-7vwq+rOHVWjyXxVlR76Agnvhy8I9rpzjosTESvmhNeXOXdZZB15Fl+TI9x1SiHZH5Jv2wTGduSxFDIaq0m3DUw==}
+    dependencies:
+      '@hapi/hoek': 9.3.0
+    dev: false
+
+  /@sideway/formula@3.0.1:
+    resolution: {integrity: sha512-/poHZJJVjx3L+zVD6g9KgHfYnb443oi7wLu/XKojDviHy6HOEOA6z1Trk5aR1dGcmPenJEgb2sK2I80LeS3MIg==}
+    dev: false
+
+  /@sideway/pinpoint@2.0.0:
+    resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
     dev: false
 
   /@types/node@20.9.4:
@@ -216,8 +243,8 @@ packages:
       express: 4.18.2
     dev: false
 
-  /express-file-routing@3.0.3(express@4.18.2):
-    resolution: {integrity: sha512-0936IhPc64moJHAG1Fz3SLCi0Upt6ahsbocrC6hdPUgmHY2018wjVrbln0HP67JoWFUdmmzypYiIHjF898s0hA==}
+  /express-file-routing@2.1.5(express@4.18.2):
+    resolution: {integrity: sha512-+/koFBYRr4m6epq+hse8lXRrpoRvvxF9MibWmF4/jmOcDFKzek3zi6twflEzh98lqVp41znIMFhjfSpemxVWZg==}
     peerDependencies:
       express: '>4.1.2'
     dependencies:
@@ -355,6 +382,16 @@ packages:
   /ipaddr.js@1.9.1:
     resolution: {integrity: sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==}
     engines: {node: '>= 0.10'}
+    dev: false
+
+  /joi@17.11.0:
+    resolution: {integrity: sha512-NgB+lZLNoqISVy1rZocE9PZI36bL/77ie924Ri43yEvi9GUUMPeyVIr8KdFTMUlby1p0PBYMk9spIxEUQYqrJQ==}
+    dependencies:
+      '@hapi/hoek': 9.3.0
+      '@hapi/topo': 5.1.0
+      '@sideway/address': 4.1.4
+      '@sideway/formula': 3.0.1
+      '@sideway/pinpoint': 2.0.0
     dev: false
 
   /jsonwebtoken@9.0.2:

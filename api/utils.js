@@ -3,9 +3,9 @@ const ObjectId = require('mongoose').Types.ObjectId;
 const codes = import('referral-codes');
 
 /**
- * Creates a JWT cookie based on a user's information. (_id)
+ * Creates a JWT based on a user's information. (_id)
  */
-exports.createJWTCookie = user => {
+exports.createJWT = user => {
   let expireAt = 3 * 30 * 24 * 60 * 60; /*3 months*/
   return jwt.sign({ id: user._id }, process.env.SECRET, {
     expiresIn: expireAt,
