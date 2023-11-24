@@ -1,3 +1,6 @@
+import { enqueueSnackbar } from 'notistack';
+
+import { isRejectedWithValue, Middleware, MiddlewareAPI } from '@reduxjs/toolkit';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const api = createApi({
@@ -14,3 +17,12 @@ export const api = createApi({
   }),
   endpoints: _builder => ({}),
 });
+
+export const ErrorHandler: Middleware = (_api: MiddlewareAPI) => next => action => {
+  if (isRejectedWithValue(action)) {
+    enqueueSnackbar(action.payload?.data || 'Server error occurred', { variant: 'error', preventDuplicate: true });
+    return;
+  }
+
+  return next(action);
+};

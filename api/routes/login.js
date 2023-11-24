@@ -1,7 +1,7 @@
 const joi = require('joi');
 const throttle = require('express-throttle');
 const { UserModel } = require('../models/User');
-const { createJWT } = require('../utils');
+const { createJWT, cleanObject } = require('../utils');
 const { joiValidate } = require('../middleware/validation');
 
 module.exports.post = [
@@ -11,12 +11,15 @@ module.exports.post = [
     password: joi.string().required(),
   }),
   async (req, res) => {
-    let userAttempting = await UserModel.findOne({ email: req.body.email }).select('+password');
+    const userAttempting = await UserModel.findOne({ email: req.body.email }).select('+password');
     if (!userAttempting) return res.status(404).json('User does not exists');
 
-    let validPassword = await userAttempting.validatePassword(req.body?.password);
+    const validPassword = await userAttempting.validatePassword(req.body?.password);
     if (!validPassword) return res.status(404).json('Incorrect password');
 
-    return res.status(200).json(createJWT(userAttempting));
+    return res.status(200).json({
+      user: cleanObject(userAttempting.toJSON(), ['_id', 'role']),
+      token: createJWT(userAttempting),
+    });
   },
 ];

@@ -6,7 +6,6 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   userInfo: {}, // for user object
-  token: null, // for storing the JWT
 };
 
 const authSlice = createSlice({
@@ -14,12 +13,10 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action) => {
-      console.log('aaaa', action.payload);
-
-      state.token = action.payload;
+      state.userInfo = action.payload;
     },
     logOut: (state, _action) => {
-      state.token = null;
+      state.userInfo = {};
     },
   },
 });

@@ -7,7 +7,7 @@ const codes = import('referral-codes');
  */
 exports.createJWT = user => {
   let expireAt = 3 * 30 * 24 * 60 * 60; /*3 months*/
-  return jwt.sign({ id: user._id }, process.env.SECRET, {
+  return jwt.sign({ id: user._id, role: user.role }, process.env.SECRET, {
     expiresIn: expireAt,
   });
 };
