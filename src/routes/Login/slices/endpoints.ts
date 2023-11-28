@@ -1,9 +1,11 @@
-import { api } from '../../../utils/apiSlice';
+import { api } from '@utils/slices/apiSlice';
+
+import { ILoginCredentials } from './types';
 
 export const loginSlices = api.injectEndpoints({
   endpoints: builder => ({
     login: builder.mutation({
-      query: (body: { email: string; password: string }) => ({
+      query: (body: ILoginCredentials) => ({
         url: '/login',
         method: 'POST',
         body,

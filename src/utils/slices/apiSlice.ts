@@ -15,7 +15,11 @@ export const api = createApi({
       return headers;
     },
   }),
-  endpoints: _builder => ({}),
+  endpoints: builder => ({
+    check: builder.query({
+      query: () => `/`,
+    }),
+  }),
 });
 
 export const ErrorHandler: Middleware = (_api: MiddlewareAPI) => next => action => {

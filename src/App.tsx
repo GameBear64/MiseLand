@@ -1,19 +1,24 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
+
+import { RootState } from '@utils/store';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const location = useLocation();
+
+  const { userInfo } = useSelector((state: RootState) => state.auth);
 
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-      <h1 className="text-3xl font-bold underline">also this is tailwind</h1>
+      <p>
+        <Link to="/1">route 1</Link>
+      </p>
+      <p>
+        <Link to="/2">route 2</Link>
+      </p>
+
+      <pre>{JSON.stringify(userInfo, null, 2)}</pre>
+      <pre>{JSON.stringify(location, null, 2)}</pre>
     </>
   );
 }

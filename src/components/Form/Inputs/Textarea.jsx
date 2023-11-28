@@ -1,4 +1,4 @@
-import ConnectForm from './ConnectForm';
+import ConnectForm from '../ConnectForm';
 
 export default function Textarea({ name, rules = {}, styles, label, ...rest }) {
   return (

@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
+interface User {
+  _id: string;
+  name: string;
+  role: string;
+}
 
-// interface User {
-//   name: string;
-// }
-
-const initialState = {
-  userInfo: {}, // for user object
+const initialState: { userInfo: User | null } = {
+  userInfo: null, // for user object
 };
 
 const authSlice = createSlice({
@@ -16,12 +17,10 @@ const authSlice = createSlice({
       state.userInfo = action.payload;
     },
     logOut: (state, _action) => {
-      state.userInfo = {};
+      state.userInfo = null;
     },
   },
 });
 
 export const { setUser, logOut } = authSlice.actions;
 export default authSlice.reducer;
-
-// export const selectUser = state => state.user;

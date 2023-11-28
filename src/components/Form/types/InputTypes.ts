@@ -7,3 +7,7 @@ export interface IInput {
   label?: string;
   [key: string]: unknown;
 }
+
+export interface IConfirmField extends IInput {
+  sameAs: string;
+}

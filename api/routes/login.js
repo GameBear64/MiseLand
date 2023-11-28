@@ -18,7 +18,7 @@ module.exports.post = [
     if (!validPassword) return res.status(404).json('Incorrect password');
 
     return res.status(200).json({
-      user: cleanObject(userAttempting.toJSON(), ['_id', 'role']),
+      user: cleanObject(userAttempting.toJSON(), ['_id', 'name', 'role']),
       token: createJWT(userAttempting),
     });
   },

@@ -1,4 +1,4 @@
-// const { UserModel } = require('../models/User');
+const { UserModel } = require('../models/User');
 const jwt = require('jsonwebtoken');
 const { wildcardMatch } = require('../utils');
 
@@ -17,8 +17,8 @@ exports.checkAuth = async (req, res, next) => {
 
   try {
     let decoded = jwt.verify(req.headers?.jwt, process.env.SECRET);
-    // let currentUser = await UserModel.exists({ _id: decoded.id }).select('+passwordChangedAt');
-    let currentUser = false;
+
+    let currentUser = await UserModel.exists({ _id: decoded.id }).select('+passwordChangedAt');
     // update activity status here whenever user passes trough - use on frontend for "last online" timestamp
 
     if (!currentUser) return res.status(401).json({ error: 'The user belonging to this token no longer exist.' });

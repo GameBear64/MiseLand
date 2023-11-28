@@ -19,7 +19,7 @@ module.exports.post = [
     const user = await UserModel.create(req.body);
 
     return res.status(201).json({
-      user: cleanObject(user.toJSON(), ['_id', 'role']),
+      user: cleanObject(user.toJSON(), ['_id', 'name', 'role']),
       token: createJWT(user),
     });
   },
