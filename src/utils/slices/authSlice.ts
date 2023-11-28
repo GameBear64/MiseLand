@@ -1,11 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-interface User {
-  _id: string;
-  name: string;
-  role: string;
-}
 
-const initialState: { userInfo: User | null } = {
+import { IUser } from '@utils/types';
+
+const initialState: { userInfo: IUser | null } = {
   userInfo: null, // for user object
 };
 

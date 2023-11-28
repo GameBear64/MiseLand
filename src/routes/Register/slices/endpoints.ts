@@ -1,10 +1,11 @@
 import { api } from '@utils/slices/apiSlice';
+import { IServerLoginResponse } from '@utils/types';
 
 import { IRegisterCredentials } from './types';
 
 export const registerSlices = api.injectEndpoints({
   endpoints: builder => ({
-    register: builder.mutation({
+    register: builder.mutation<IServerLoginResponse, IRegisterCredentials>({
       query: (body: IRegisterCredentials) => ({
         url: '/register',
         method: 'POST',

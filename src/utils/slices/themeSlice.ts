@@ -1,10 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-interface Theme {
-  mode: 'light' | 'dark';
-  color: 'orange' | 'red' | 'green' | 'blue' | 'violet' | 'pink';
-}
 
-const initialState: Theme = {
+import { ITheme } from '@utils/types';
+
+const initialState: ITheme = {
   mode: 'light',
   color: 'blue',
 };

@@ -21,7 +21,7 @@ exports.checkAuth = async (req, res, next) => {
     let currentUser = await UserModel.exists({ _id: decoded.id }).select('+passwordChangedAt');
     // update activity status here whenever user passes trough - use on frontend for "last online" timestamp
 
-    if (!currentUser) return res.status(401).json({ error: 'The user belonging to this token no longer exist.' });
+    if (!currentUser) return res.status(401).json('The user belonging to this token no longer exist.');
 
     if (currentUser?.passwordChangedAt) {
       let lastChanged = currentUser.passwordChangedAt.getTime() / 1000;
@@ -31,6 +31,6 @@ exports.checkAuth = async (req, res, next) => {
     req.apiUserId = decoded.id;
     next();
   } catch (err) {
-    return res.status(401).json({ error: 'Not Authorized' });
+    return res.status(401).json('Not Authorized');
   }
 };
