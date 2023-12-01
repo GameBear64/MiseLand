@@ -1,16 +1,4 @@
-export interface IItem {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  discountPercentage: number;
-  rating: number;
-  stock: number;
-  brand: string;
-  category: string;
-  thumbnail: string;
-  images: string[];
-}
+import { IItem } from '@components/Items/slices/types';
 
 export interface IResponse {
   [key: string]: IItem[];

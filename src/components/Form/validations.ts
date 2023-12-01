@@ -10,7 +10,7 @@ export const MIN_LENGTH = (length: number) => ({
 });
 
 export const MAX_LENGTH = (length: number) => ({
-  minLength: {
+  maxLength: {
     value: length,
     message: `This field can't be longer than ${length} characters!`,
   },

@@ -7,7 +7,7 @@ export default function ConfirmField({ name, sameAs, rules = {}, styles, label, 
       {({ register, watch, formState: { errors } }) => {
         return (
           <div className={styles}>
-            <div className="mt-2 flex flex-col">
+            <div className={`flex flex-col ${label ? 'mt-2' : ''}`}>
               <label className="text-left font-semibold">{label}</label>
               <input
                 {...register(name, {
@@ -16,7 +16,9 @@ export default function ConfirmField({ name, sameAs, rules = {}, styles, label, 
                     if (watch(sameAs!) != value) return 'Your passwords do no match';
                   },
                 })}
-                className={`h-10 rounded-l border bg-base px-2 focus:border-primary focus:outline-none ${errors[name] ? 'border-2 border-red-600' : 'border-slate-200'}`}
+                className={`h-10 rounded border bg-base px-2 focus:border-primary focus:outline-none ${
+                  errors[name] ? 'border-2 border-red-600' : 'border-slate-200'
+                }`}
                 {...rest}
               />
             </div>

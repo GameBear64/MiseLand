@@ -5,3 +5,9 @@ export const cleanObject = (object: { [key: string]: unknown }, desiredFields: s
 export const randomRange = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+
+export const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 2,
+});
