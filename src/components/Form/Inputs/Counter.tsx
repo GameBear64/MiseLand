@@ -6,7 +6,8 @@ import { IInput } from '../types/InputTypes';
 export default function Counter({ name, rules = {}, styles, label, ...rest }: IInput) {
   return (
     <ConnectForm>
-      {({ register, formState: { errors } }) => {
+      {({ register, setValue, watch, formState: { errors } }) => {
+        const count = watch(name);
         return (
           <div className={styles}>
             <div className={`flex flex-col ${label ? 'mt-2' : ''}`}>
@@ -15,6 +16,7 @@ export default function Counter({ name, rules = {}, styles, label, ...rest }: II
                 <button
                   type="button"
                   className="h-10 w-8 cursor-pointer rounded-l bg-gray-300 pt-1 text-gray-600 hover:bg-gray-400 hover:text-gray-700"
+                  onClick={() => setValue(name, count + 1, { shouldDirty: true, shouldTouch: true })}
                 >
                   <Icon icon="add" />
                 </button>
@@ -29,6 +31,7 @@ export default function Counter({ name, rules = {}, styles, label, ...rest }: II
                 <button
                   type="button"
                   className="h-10 w-8 cursor-pointer rounded-r bg-gray-300 pt-1 text-gray-600 hover:bg-gray-400 hover:text-gray-700"
+                  onClick={() => setValue(name, count - 1, { shouldDirty: true, shouldTouch: true })}
                 >
                   <Icon icon="remove" />
                 </button>

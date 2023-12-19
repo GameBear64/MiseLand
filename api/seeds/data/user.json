@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Admin",
+    "email": "admin@smail.com",
+    "role": "Admin",
+    "password": "123456789",
+    "confirmPassword": "123456789"
+  },
+  {
+    "name": "Home Goods Store",
+    "email": "seller1@smail.com",
+    "password": "123456789",
+    "confirmPassword": "123456789"
+  },
+  {
+    "name": "Everything Buy Shop",
+    "email": "seller2@smail.com",
+    "password": "123456789",
+    "confirmPassword": "123456789"
+  },
+  {
+    "name": "Bob robbins",
+    "email": "bob@smail.com",
+    "password": "123456789",
+    "confirmPassword": "123456789"
+  },
+  {
+    "name": "Rich Adams",
+    "email": "rich@smail.com",
+    "password": "123456789",
+    "confirmPassword": "123456789"
+  },
+  {
+    "name": "Gray Martins",
+    "email": "Gray@smail.com",
+    "password": "123456789",
+    "confirmPassword": "123456789"
+  },
+  {
+    "name": "Gamriel Bardon",
+    "email": "gam@smail.com",
+    "password": "123456789",
+    "confirmPassword": "123456789"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "title": "smartphones",
+    "description": "A mobile phone that performs many of the functions of a computer, typically having a touchscreen interface, internet access, and an operating system capable of running downloaded apps.",
+    "icon": "smartphone",
+    "hexColor": "#1c82ff"
+  },
+  {
+    "title": "laptops",
+    "description": "A portable computer that is small and light enough to be used on your lap. It typically has a clamshell form factor, with a keyboard and a screen hinged together.",
+    "icon": "laptop_chromebook",
+    "hexColor": "#4caf50"
+  },
+  {
+    "title": "fragrances",
+    "description": "Perfumes or colognes that emit a pleasant scent, often used for personal grooming and enhancing one's overall presence.",
+    "icon": "health_and_beauty",
+    "hexColor": "#ff4081"
+  },
+  {
+    "title": "skincare",
+    "description": "Products and routines designed to take care of the skin, improve its appearance, and promote overall skin health.",
+    "icon": "health_and_beauty",
+    "hexColor": "#ff9800"
+  },
+  {
+    "title": "groceries",
+    "description": "Food and other consumable items that are regularly purchased for household use.",
+    "icon": "shopping_basket",
+    "hexColor": "#b0ff1c"
+  },
+  {
+    "title": "home-decoration",
+    "description": "Items and accessories used to enhance the aesthetics of a home, including furniture, decor, and other decorative elements.",
+    "icon": "in_home_mode",
+    "hexColor": "#9c27b0"
+  }
+]

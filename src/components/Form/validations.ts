@@ -15,3 +15,17 @@ export const MAX_LENGTH = (length: number) => ({
     message: `This field can't be longer than ${length} characters!`,
   },
 });
+
+export const MIN = (num: number) => ({
+  min: {
+    value: num,
+    message: `This value must be above ${num - 1}`,
+  },
+});
+
+export const MAX = (num: number) => ({
+  max: {
+    value: num,
+    message: `This value must below ${num}`,
+  },
+});

@@ -1,12 +1,17 @@
-import { IItem } from '@components/Items/slices/types';
+import { useContext } from 'react';
+
 import StarRating from '@components/StarRating/StarRating';
 
 import { currencyFormatter } from '@utils/utils';
 
+import { ProductContext } from '../Product';
+
 import ActionButtons from './ActionButtons';
 import Gallery from './Gallery';
 
-export default function Showcase({ product }: { product: IItem }) {
+export default function Showcase() {
+  const product = useContext(ProductContext)!;
+
   return (
     <div className="flex flex-wrap items-center">
       <div className="h-fit w-full object-cover object-center md:w-1/2">
@@ -39,7 +44,7 @@ export default function Showcase({ product }: { product: IItem }) {
         <p className="leading-relaxed">{product.description}</p>
         <hr className="mt-5 border-t-2 border-gray-200 pt-5" />
 
-        <ActionButtons productId={product.id} />
+        <ActionButtons />
       </div>
     </div>
   );

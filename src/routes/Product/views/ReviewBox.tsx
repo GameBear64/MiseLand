@@ -1,22 +1,39 @@
-import { Input } from '@components/Form/Fields';
+import { useContext } from 'react';
+
+import { MediaSelect, Stars, Textarea } from '@components/Form/Fields';
 import Form from '@components/Form/Form';
-import StarRating from '@components/StarRating/StarRating';
+import { MIN_LENGTH, REQUIRED } from '@components/Form/validations';
+
+import { ProductContext } from '../Product';
+import { IComment } from '../slices/types';
+
+import { useAddCommentMutation } from './../slices/endpoints';
 
 export default function ReviewBox() {
+  const { id } = useContext(ProductContext)!;
+
+  const [addComment] = useAddCommentMutation();
+
+  const handleSubmit = (body: IComment) => {
+    addComment({ id, body });
+  };
+
   return (
     <div className="rounded border bg-gray-100 p-3">
-      <Form onSubmit={() => {}}>
+      <Form onSubmit={handleSubmit}>
         <div className="flex w-full gap-5">
-          <Input
+          <Textarea
             name="comment"
             placeholder="This product is very.... it made me feel... overall I rate it..."
             styles="flex-grow"
+            rows="4"
+            rules={{ ...REQUIRED, ...MIN_LENGTH(30) }}
           />
-          <div className="w-80 bg-gray-400">image box here </div>
+          <MediaSelect name="image" label="Upload image" accept=".png,.jpg,.jpeg" />
         </div>
-        <div className="flex items-center pt-4">
-          <div className="grow">
-            <StarRating rating={0} />
+        <div className="flex items-center pt-6">
+          <div className="grow text-xl">
+            <Stars name="rating" rules={REQUIRED} />
           </div>
           <button className="flex h-min rounded border-0 bg-primary px-4 py-2 text-white hover:bg-primary-dark focus:outline-none">
             Submit

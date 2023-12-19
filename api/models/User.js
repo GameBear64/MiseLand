@@ -26,6 +26,12 @@ const userSchema = new mongoose.Schema(
       enum: Object.values(Role),
       default: Role.User,
     },
+    cart: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product',
+      },
+    ],
     passwordChangedAt: {
       type: Date,
       select: false,

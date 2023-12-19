@@ -8,6 +8,7 @@ require('dotenv').config({ path: '../.env' });
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
 mongoose.connect(`mongodb://127.0.0.1:27017/MiseLand`).then(() => console.log(`Connected to MiseLand in MongoDB`));
+if (process.env.WITH_SEEDS === 'true') require('./seeds/runner')();
 
 //============= API ==============
 const { router } = require('express-file-routing');

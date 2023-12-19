@@ -22,9 +22,7 @@ const router = createBrowserRouter([
     path: '/',
     element: (
       <Suspense fallback={<Loader />}>
-        <Layout>
-          <Guard />
-        </Layout>
+        <Layout />
       </Suspense>
     ),
     errorElement: <ErrorPage />,

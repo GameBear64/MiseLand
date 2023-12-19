@@ -30,8 +30,8 @@ dependencies:
     specifier: ^8.0.1
     version: 8.0.1
   referral-codes:
-    specifier: ^3.0.0
-    version: 3.0.0
+    specifier: ^2.0.0
+    version: 2.0.3
 
 packages:
 
@@ -653,9 +653,8 @@ packages:
       unpipe: 1.0.0
     dev: false
 
-  /referral-codes@3.0.0:
-    resolution: {integrity: sha512-XuMWA8VvRztL6fChJCik+aDq0u7GOYwb8wWK3UeM0TeBqDbXqzM3jO1N9AZxOGnh6iEGpJXfNZAJt1sdVCi0/A==}
-    engines: {node: '>=18'}
+  /referral-codes@2.0.3:
+    resolution: {integrity: sha512-e66vOVnq7as2YH4fwaakd946VegbPCkivxkTKzcFn6q8tqgDeH03xY3gorIBPVzAWc3pqS+1cQGXDHuvE0t2aQ==}
     dev: false
 
   /safe-buffer@5.2.1:

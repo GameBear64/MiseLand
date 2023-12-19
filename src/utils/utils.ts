@@ -11,3 +11,16 @@ export const currencyFormatter = new Intl.NumberFormat('en-US', {
   currency: 'USD',
   maximumFractionDigits: 2,
 });
+
+export async function readFile(file: Blob) {
+  if (!file) return Promise.reject('No file provided');
+
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = event => resolve((event?.target?.result as string).split(';base64,').pop());
+
+    reader.onerror = error => reject(error);
+  });
+}
