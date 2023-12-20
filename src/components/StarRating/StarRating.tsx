@@ -1,6 +1,6 @@
 import Icon from '@components/Icon/Icon';
 
-export default function StarRating({ rating }: { rating: number }) {
+export default function StarRating({ rating = 5 }: { rating: number }) {
   const fullStars = Array.from({ length: Math.round(rating) }, (_, i) => i + 1);
   const hollowStars = Array.from({ length: 5 - Math.round(rating) }, (_, i) => i + 1);
 

@@ -1,16 +1,18 @@
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Input } from '@form/Fields';
 import Form from '@form/Form';
 import { MIN_LENGTH, REQUIRED } from '@form/validations';
 
-import { setUser } from '@utils/slices/authSlice';
+import { setUser } from 'src/stores/authSlice';
 
 import { useLoginMutation } from './slices/endpoints';
 import { ILoginCredentials } from './slices/types';
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const [login] = useLoginMutation();
   const dispatch = useDispatch();
 
@@ -20,6 +22,7 @@ export default function Login() {
       .then(({ token, user }) => {
         localStorage.setItem(import.meta.env.VITE_LOCAL_STORAGE_NAME, token);
         dispatch(setUser(user));
+        navigate(`/`);
       })
       .catch(err => console.warn(err));
   };

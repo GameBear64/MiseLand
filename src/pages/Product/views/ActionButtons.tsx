@@ -9,13 +9,13 @@ import { ProductContext } from '../Product';
 import { useAddToCartMutation, useAddToWishesMutation } from '../slices/endpoints';
 
 export default function ActionButtons() {
-  const { id } = useContext(ProductContext)!;
+  const { _id } = useContext(ProductContext)!;
 
   const [addToCart] = useAddToCartMutation();
   const [addToWishes] = useAddToWishesMutation();
 
   const handleBuy = ({ quantity }: { quantity: number }) => {
-    addToCart({ id, quantity });
+    addToCart({ _id, quantity });
   };
 
   return (
@@ -30,7 +30,7 @@ export default function ActionButtons() {
       </Form>
       <button
         className="ml-4 h-10 w-10 items-center justify-center rounded-full border-0 bg-gray-200 pt-1 text-gray-500"
-        onClick={() => addToWishes(id)}
+        onClick={() => addToWishes(_id)}
       >
         <Icon icon="favorite" full />
       </button>

@@ -27,16 +27,12 @@ export default function Showcase() {
             <span className="ml-3 text-gray-600">{product.rating} Reviews</span>
           </span>
           <span className="mx-4 my-1 border-l-2 border-gray-200" />
-          <span className="flex py-2 text-gray-600">{product.stock} sold</span>
+          <span className="flex py-2 text-gray-600">{product.sold} sold</span>
         </div>
 
         <div className="flex">
           <div className="flex items-center gap-2">
-            <p className="mr-2 text-2xl font-semibold text-gray-900 ">
-              {currencyFormatter.format(product.price - (product.price / 100) * product.discountPercentage)}
-            </p>
-            <p className="text-base  font-medium text-gray-500 line-through ">${product.price}</p>
-            <p className="ml-auto text-base font-medium text-green-500">{product.discountPercentage}% off</p>
+            <p className="mr-2 text-2xl font-semibold text-gray-900 ">${product.price}</p>
           </div>
         </div>
 

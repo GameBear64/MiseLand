@@ -1,11 +1,11 @@
 export interface IItem {
-  id: string;
+  _id: string;
   title: string;
   description: string;
   price: number;
   discountPercentage: number;
   rating: number;
-  stock: number;
+  sold: number;
   brand: string;
   category: string;
   thumbnail: string;

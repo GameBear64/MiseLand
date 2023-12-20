@@ -10,12 +10,12 @@ import { IComment } from '../slices/types';
 import { useAddCommentMutation } from './../slices/endpoints';
 
 export default function ReviewBox() {
-  const { id } = useContext(ProductContext)!;
+  const { _id } = useContext(ProductContext)!;
 
   const [addComment] = useAddCommentMutation();
 
   const handleSubmit = (body: IComment) => {
-    addComment({ id, body });
+    addComment({ _id, body });
   };
 
   return (

@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Auth
-const Guard = lazy(() => import('../utils/pages/RouterGuard.tsx'));
+const Guard = lazy(() => import('./Other/RouterGuard.tsx'));
 const Register = lazy(() => import('./Register/Register.tsx'));
 const Login = lazy(() => import('./Login/Login.tsx'));
 
@@ -13,9 +13,9 @@ const Product = lazy(() => import('./Product/Product.tsx'));
 // Other
 import Layout from '@components/Layout/Layout.tsx';
 
-import ErrorPage from '../utils/pages/ErrorPage.tsx';
-import Loader from '../utils/pages/Loader.tsx';
-import NotFound from '../utils/pages/NotFound.tsx';
+import ErrorPage from './Other/ErrorPage.tsx';
+import Loader from './Other/Loader.tsx';
+import NotFound from './Other/NotFound.tsx';
 
 const router = createBrowserRouter([
   {

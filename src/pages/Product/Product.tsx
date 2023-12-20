@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { IItem } from '@components/Items/slices/types';
 import Slider from '@components/Items/Slider';
 
-import Loader from '@utils/pages/Loader';
+import Loader from '../Other/Loader';
 
 import { useGetProductQuery, useGetRelatedQuery } from './slices/endpoints';
 import Reviews from './views/Reviews';

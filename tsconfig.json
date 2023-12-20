@@ -25,7 +25,8 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@form/*": ["src/components/Form/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@api": ["src/stores/apiSlice"]
     }
   },
   "include": ["src"],

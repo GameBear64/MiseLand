@@ -1,3 +1,5 @@
+import { ValidationValueMessage } from 'react-hook-form';
+
 import Icon from '@components/Icon/Icon';
 
 import ConnectForm from '../ConnectForm';
@@ -16,7 +18,10 @@ export default function Counter({ name, rules = {}, styles, label, ...rest }: II
                 <button
                   type="button"
                   className="h-10 w-8 cursor-pointer rounded-l bg-gray-300 pt-1 text-gray-600 hover:bg-gray-400 hover:text-gray-700"
-                  onClick={() => setValue(name, count + 1, { shouldDirty: true, shouldTouch: true })}
+                  onClick={() => {
+                    if ((rules?.max as ValidationValueMessage)?.value === count) return;
+                    setValue(name, count + 1, { shouldDirty: true, shouldTouch: true });
+                  }}
                 >
                   <Icon icon="add" />
                 </button>
@@ -31,7 +36,10 @@ export default function Counter({ name, rules = {}, styles, label, ...rest }: II
                 <button
                   type="button"
                   className="h-10 w-8 cursor-pointer rounded-r bg-gray-300 pt-1 text-gray-600 hover:bg-gray-400 hover:text-gray-700"
-                  onClick={() => setValue(name, count - 1, { shouldDirty: true, shouldTouch: true })}
+                  onClick={() => {
+                    if ((rules?.min as ValidationValueMessage)?.value === count) return;
+                    setValue(name, count - 1, { shouldDirty: true, shouldTouch: true });
+                  }}
                 >
                   <Icon icon="remove" />
                 </button>

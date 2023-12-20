@@ -14,7 +14,7 @@ const themeSlice = createSlice({
       state.items = [...state.items, action.payload];
     },
     removeItem: (state, action) => {
-      state.items = state.items.filter(item => item.id !== action.payload);
+      state.items = state.items.filter(item => item._id !== action.payload);
     },
     setCart: (state, action) => {
       state.items = action.payload;

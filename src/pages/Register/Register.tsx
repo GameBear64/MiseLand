@@ -1,16 +1,18 @@
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { ConfirmField, Input } from '@form/Fields';
 import Form from '@form/Form';
 import { MAX_LENGTH, MIN_LENGTH, REQUIRED } from '@form/validations';
 
-import { setUser } from '@utils/slices/authSlice';
+import { setUser } from 'src/stores/authSlice';
 
 import { useRegisterMutation } from './slices/endpoints';
 import { IRegisterCredentials } from './slices/types';
 
 export default function Register() {
+  const navigate = useNavigate();
+
   const [register] = useRegisterMutation();
   const dispatch = useDispatch();
 
@@ -20,6 +22,7 @@ export default function Register() {
       .then(({ token, user }) => {
         localStorage.setItem(import.meta.env.VITE_LOCAL_STORAGE_NAME, token);
         dispatch(setUser(user));
+        navigate(`/`);
       })
       .catch(err => console.warn(err));
   };

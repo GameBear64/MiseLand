@@ -1,4 +1,5 @@
-import { api } from '@utils/slices/apiSlice';
+import { api } from '@api';
+
 import { IServerLoginResponse } from '@utils/types';
 
 import { ILoginCredentials } from './types';

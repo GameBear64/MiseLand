@@ -5,7 +5,7 @@ const { wildcardMatch } = require('../utils');
 let noAuthRoutes = [
   { path: '/login', methods: ['POST'] },
   { path: '/register', methods: ['POST'] },
-  { path: '/recourse/*', methods: ['GET'] },
+  { path: '/image/*', methods: ['GET'] },
   { path: '/api-docs/*', methods: ['GET'] },
   { path: '/favicon.ico', methods: ['GET'] },
 ];

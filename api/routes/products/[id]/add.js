@@ -3,8 +3,8 @@ const { joiValidate, InformationTypes } = require('../../../middleware/validatio
 const { isObjectID } = require('../../../utils');
 
 module.exports.post = [
-  joiValidate({ id: /* joi.custom(isObjectID)*/ joi.number() }, InformationTypes.PARAMS),
-  joiValidate({ quantity: joi.number().min(1) }, InformationTypes.QUERY),
+  joiValidate({ id: joi.custom(isObjectID).required() }, InformationTypes.PARAMS),
+  joiValidate({ quantity: joi.number().min(1).required() }, InformationTypes.QUERY),
   async (req, res) => {
     res.status(200).json({ id: req.params.id, q: req.query.quantity });
   },

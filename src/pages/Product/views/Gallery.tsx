@@ -13,7 +13,7 @@ export default function Gallery({ images }: { images: string[] }) {
           {images.map(image => (
             <SwiperSlide key={image}>
               <div className="flex justify-center">
-                <img src={image} className="aspect-square object-scale-down" />
+                <img src={`http://localhost:3030/image/${image}`} className="aspect-square object-scale-down" />
               </div>
             </SwiperSlide>
           ))}
@@ -31,7 +31,7 @@ export default function Gallery({ images }: { images: string[] }) {
         {images.map(image => (
           <SwiperSlide key={image}>
             <div>
-              <img src={image} className="aspect-square cursor-pointer object-cover" />
+              <img src={`http://localhost:3030/image/${image}`} className="aspect-square cursor-pointer object-cover" />
             </div>
           </SwiperSlide>
         ))}

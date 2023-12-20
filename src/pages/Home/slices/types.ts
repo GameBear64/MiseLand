@@ -1,5 +1,6 @@
 import { IItem } from '@components/Items/slices/types';
 
 export interface IResponse {
-  [key: string]: IItem[];
+  _id: string;
+  products: IItem[];
 }

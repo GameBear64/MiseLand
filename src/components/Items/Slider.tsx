@@ -23,7 +23,7 @@ export default function Slider({ name, items }: { name: string; items: IItem[] }
           }}
         >
           {items.map((item: IItem) => (
-            <SwiperSlide key={item.id} style={{ width: 'auto' }}>
+            <SwiperSlide key={item._id} style={{ width: 'auto' }}>
               <Item item={item} />
             </SwiperSlide>
           ))}

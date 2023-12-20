@@ -3,10 +3,12 @@ const fs = require('fs').promises;
 const codes = require('referral-codes');
 
 const { joiValidate } = require('../../middleware/validation');
+const { base64ToBuffer } = require('../../middleware/mods');
 
 const { MediaModel } = require('../../models/Media');
 
 module.exports.post = [
+  base64ToBuffer('data'),
   joiValidate({
     data: joi.string().required(),
     type: joi.string().max(5).regex(/\w+/).required(),

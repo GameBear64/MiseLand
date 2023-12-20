@@ -10,6 +10,7 @@ module.exports = async () => {
   const usersArray = require('./data/user.json');
 
   usersArray.forEach(user => {
+    // password is 12345678
     UserModel.updateOne({ email: user.email }, user, { upsert: true }).then(result => {
       if (result.upsertedId) console.log(`Upserted ${user.name}`, result);
     });
@@ -34,26 +35,31 @@ module.exports = async () => {
     if (exists) continue;
 
     let imgIds = [];
+    const { id: authorId } = await UserModel.findOne({ name: product.author });
+
     for await (const [key2, image] of product.images.entries()) {
-      const { id: authorId } = await UserModel.findOne({ name: product.author });
       const userPath = `uploads/${authorId}`;
       const filePath = `${userPath}/${key}-${key2}.png`;
 
       await fs
         .stat(userPath)
         .catch(async () => await fs.mkdir(userPath))
-        .then(() => fs.appendFile(filePath, image));
+        .then(() => fs.appendFile(filePath, Buffer.from(image, 'base64')));
 
-      const { id } = await MediaModel.findOneAndUpdate(
-        { path: filePath },
-        { author: authorId, path: filePath },
-        { upsert: true }
-      );
+      await MediaModel.updateOne({ path: filePath }, { author: authorId, path: filePath }, { upsert: true });
 
-      imgIds.push(id);
+      const { id: fileId } = await MediaModel.findOne({ path: filePath });
+
+      imgIds.push(fileId);
     }
 
-    ProductModel.updateOne({ title: product.title }, { product, images: imgIds }, { upsert: true }).then(result => {
+    const { id: categoryId } = await CategoryModel.findOne({ title: product.category });
+
+    ProductModel.updateOne(
+      { title: product.title },
+      { ...product, images: imgIds, category: categoryId, author: authorId },
+      { upsert: true }
+    ).then(result => {
       if (result.upsertedId) console.log(`Upserted ${product.title}`, result);
     });
   }

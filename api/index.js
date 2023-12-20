@@ -15,10 +15,12 @@ const { router } = require('express-file-routing');
 require('express-async-errors');
 
 const cors = require('cors');
+const { normalizeBodyFields } = require('./middleware/global');
 const { checkAuth } = require('./middleware/auth');
 
 app.use(cors());
 app.use(express.json({ limit: '100mb' }));
+app.use(normalizeBodyFields);
 app.use(checkAuth);
 
 app.use('/', router());

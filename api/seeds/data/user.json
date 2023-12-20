@@ -3,43 +3,36 @@
     "name": "Admin",
     "email": "admin@smail.com",
     "role": "Admin",
-    "password": "123456789",
-    "confirmPassword": "123456789"
+    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
   },
   {
     "name": "Home Goods Store",
     "email": "seller1@smail.com",
-    "password": "123456789",
-    "confirmPassword": "123456789"
+    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
   },
   {
     "name": "Everything Buy Shop",
     "email": "seller2@smail.com",
-    "password": "123456789",
-    "confirmPassword": "123456789"
+    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
   },
   {
     "name": "Bob robbins",
     "email": "bob@smail.com",
-    "password": "123456789",
-    "confirmPassword": "123456789"
+    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
   },
   {
     "name": "Rich Adams",
     "email": "rich@smail.com",
-    "password": "123456789",
-    "confirmPassword": "123456789"
+    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
   },
   {
     "name": "Gray Martins",
-    "email": "Gray@smail.com",
-    "password": "123456789",
-    "confirmPassword": "123456789"
+    "email": "gray@smail.com",
+    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
   },
   {
     "name": "Gamriel Bardon",
     "email": "gam@smail.com",
-    "password": "123456789",
-    "confirmPassword": "123456789"
+    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
   }
 ]

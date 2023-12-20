@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 
 import ThemeProvider from '@utils/providers/ThemeProvider';
-import { api } from '@utils/slices/apiSlice';
 
-import Router from './routes/router';
-import { store } from './utils/store';
+import Router from './pages/router';
+import { store } from './stores/_store';
+import { api } from './stores/apiSlice';
 
 import './index.css';
 import 'swiper/css';

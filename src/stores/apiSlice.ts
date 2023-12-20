@@ -5,7 +5,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 import { IServerLoginResponse } from '@utils/types';
 
-import { router } from '../../routes/router';
+import { router } from '../pages/router';
 
 export const api = createApi({
   reducerPath: 'api',
