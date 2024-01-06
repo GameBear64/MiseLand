@@ -5,11 +5,13 @@ import Icon from '@components/Icon/Icon';
 import ConnectForm from '../ConnectForm';
 import { IInput } from '../types/InputTypes';
 
-export default function Counter({ name, rules = {}, styles, label, ...rest }: IInput) {
+export default function Counter({ name, rules = {}, styles, label, onChange, ...rest }: IInput) {
   return (
     <ConnectForm>
       {({ register, setValue, watch, formState: { errors } }) => {
         const count = watch(name);
+        onChange && onChange(Number(count));
+
         return (
           <div className={styles}>
             <div className={`flex flex-col ${label ? 'mt-2' : ''}`}>

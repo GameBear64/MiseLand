@@ -12,12 +12,6 @@ export const homeSlice = api.injectEndpoints({
     getRelated: builder.query<IItem[], string>({
       query: _id => `/products/${_id}/related`,
     }),
-    addToCart: builder.mutation<void, { _id: string; quantity: number }>({
-      query: ({ _id, quantity }) => ({
-        url: `/products/${_id}/add?quantity=${quantity}`,
-        method: 'POST',
-      }),
-    }),
     addToWishes: builder.mutation<void, string>({
       query: _id => ({
         url: `/products/${_id}/wish`,
@@ -34,7 +28,6 @@ export const homeSlice = api.injectEndpoints({
   }),
 });
 
-export const { useGetProductQuery, useAddToCartMutation, useAddToWishesMutation, useGetRelatedQuery, useAddCommentMutation } =
-  homeSlice;
+export const { useGetProductQuery, useAddToWishesMutation, useGetRelatedQuery, useAddCommentMutation } = homeSlice;
 
 export const selectProduct = (id: string) => homeSlice.endpoints.getProduct.select(id);

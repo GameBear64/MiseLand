@@ -8,7 +8,7 @@ module.exports.post = [
   throttle({ burst: 5, period: '10s' }),
   joiValidate({
     email: joi.string().required(), // Implied validation from /register
-    password: joi.string().required(),
+    password: joi.string().alphanum().required(),
   }),
   async (req, res) => {
     const userAttempting = await UserModel.findOne({ email: req.body.email }).select('+password');

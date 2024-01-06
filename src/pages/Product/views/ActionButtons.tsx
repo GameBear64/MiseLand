@@ -1,21 +1,32 @@
 import { useContext } from 'react';
+import { enqueueSnackbar } from 'notistack';
+import { useDispatch } from 'react-redux';
 
 import { Counter } from '@components/Form/Fields';
 import Form from '@components/Form/Form';
 import { MIN, REQUIRED } from '@components/Form/validations';
 import Icon from '@components/Icon/Icon';
 
+import { setCart } from '@pages/Cart/slices/cartSlice';
+import { useAddToCartMutation } from '@pages/Cart/slices/endpoints';
+
 import { ProductContext } from '../Product';
-import { useAddToCartMutation, useAddToWishesMutation } from '../slices/endpoints';
+import { useAddToWishesMutation } from '../slices/endpoints';
 
 export default function ActionButtons() {
   const { _id } = useContext(ProductContext)!;
+  const dispatch = useDispatch();
 
   const [addToCart] = useAddToCartMutation();
   const [addToWishes] = useAddToWishesMutation();
 
   const handleBuy = ({ quantity }: { quantity: number }) => {
-    addToCart({ _id, quantity });
+    addToCart({ _id, quantity })
+      .unwrap()
+      .then(data => {
+        dispatch(setCart(data));
+        enqueueSnackbar('Added to cart', { variant: 'success' });
+      });
   };
 
   return (

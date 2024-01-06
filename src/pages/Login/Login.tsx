@@ -5,7 +5,7 @@ import { Input } from '@form/Fields';
 import Form from '@form/Form';
 import { MIN_LENGTH, REQUIRED } from '@form/validations';
 
-import { setUser } from 'src/stores/authSlice';
+import { setUser } from '@stores/authSlice';
 
 import { useLoginMutation } from './slices/endpoints';
 import { ILoginCredentials } from './slices/types';

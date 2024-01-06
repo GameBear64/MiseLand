@@ -10,13 +10,15 @@ export default function NavBar() {
       <Link className="h-full p-1" to="/">
         <img src="http://localhost:5173/Logo.png" className="h-full" />
       </Link>
-      <div className="flex w-1/3 items-center justify-between gap-5">
+      <div className="flex items-center justify-between gap-5">
         <div className="mx-10 grow">
           <Form onSubmit={() => {}}>
             <Input name="search" />
           </Form>
         </div>
-        <Icon icon="shopping_cart" />
+        <Link className="text-onBase" to="/cart">
+          <Icon icon="shopping_cart" />
+        </Link>
         <Icon icon="menu" />
       </div>
     </div>

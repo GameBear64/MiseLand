@@ -5,7 +5,7 @@ import { ConfirmField, Input } from '@form/Fields';
 import Form from '@form/Form';
 import { MAX_LENGTH, MIN_LENGTH, REQUIRED } from '@form/validations';
 
-import { setUser } from 'src/stores/authSlice';
+import { setUser } from '@stores/authSlice';
 
 import { useRegisterMutation } from './slices/endpoints';
 import { IRegisterCredentials } from './slices/types';

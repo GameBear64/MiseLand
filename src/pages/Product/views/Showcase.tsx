@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 import StarRating from '@components/StarRating/StarRating';
 
@@ -19,7 +20,9 @@ export default function Showcase() {
       </div>
 
       <div className="mt-6 w-full md:mt-0 md:w-1/2 md:py-6 md:pl-10">
-        <h2 className="title-font text-sm tracking-widest text-gray-500">{product.brand}</h2>
+        <h2 className="title-font text-sm tracking-widest text-gray-500">
+          <Link to={`/profile/${product.author._id}`}>{product.author.name}</Link>/{product.brand}
+        </h2>
         <h1 className="title-font mb-1 text-3xl font-medium text-gray-900">{product.title}</h1>
         <div className="mb-4 flex font-semibold">
           <span className="flex items-center">

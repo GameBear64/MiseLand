@@ -1,4 +1,5 @@
 import { api } from '@api';
+
 import { IServerLoginResponse } from '@utils/types';
 
 import { IRegisterCredentials } from './types';

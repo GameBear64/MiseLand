@@ -24,9 +24,11 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
       "@form/*": ["src/components/Form/*"],
       "@utils/*": ["src/utils/*"],
-      "@api": ["src/stores/apiSlice"]
+      "@api": ["src/stores/apiSlice"],
+      "@stores/*": ["src/stores/*"]
     }
   },
   "include": ["src"],

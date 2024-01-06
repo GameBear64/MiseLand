@@ -5,6 +5,7 @@ export interface IInput {
   rules?: RegisterOptions<FieldValues, string>;
   styles?: string;
   label?: string;
+  onChange?: (value: unknown) => void;
   [key: string]: unknown;
 }
 

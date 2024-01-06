@@ -3,7 +3,7 @@ import { enqueueSnackbar } from 'notistack';
 import { isRejectedWithValue, Middleware, MiddlewareAPI } from '@reduxjs/toolkit';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { IServerLoginResponse } from '@utils/types';
+import { IUser } from '@utils/types';
 
 import { router } from '../pages/router';
 
@@ -21,7 +21,7 @@ export const api = createApi({
   }),
   endpoints: builder => ({
     // builder.query<ReturnValueHere, ArgumentTypeHere>
-    check: builder.query<IServerLoginResponse, void>({
+    check: builder.query<IUser, void>({
       query: () => `/`,
     }),
   }),

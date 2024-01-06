@@ -1,6 +1,5 @@
-import Loader from 'src/pages/Other/Loader';
-
 import Slider from '../../components/Items/Slider';
+import Loader from '../Other/Loader';
 
 import { useProductsQuery } from './slices/endpoints';
 

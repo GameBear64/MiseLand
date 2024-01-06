@@ -176,7 +176,7 @@ module.exports.get = [
   async (req, res) => {
     const product = await ProductModel.findOne({ _id: req.params.id });
 
-    const related = await ProductModel.find({ category: product.category });
+    const related = await ProductModel.find({ category: product?.category });
 
     res.status(200).json(related);
   },

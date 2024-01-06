@@ -1,7 +1,7 @@
 const joi = require('joi');
 const throttle = require('express-throttle');
 const { UserModel } = require('../models/User');
-const { createJWT } = require('../utils');
+const { createJWT, cleanObject } = require('../utils');
 const { joiValidate } = require('../middleware/validation');
 
 module.exports.post = [

@@ -1,7 +1,12 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react-hooks/recommended', 'plugin:tailwindcss/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:tailwindcss/recommended',
+  ],
   overrides: [
     {
       files: ['**/*.ts', '**/*.tsx'],
@@ -16,8 +21,10 @@ module.exports = {
               ['^@'],
               // Custom aliases
               ['^@components'],
+              ['^@pages'],
               ['^@form'],
               ['^@utils'],
+              ['^@stores'],
               // Imports starting with `../`
               ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
               // Imports starting with `./`

@@ -3,36 +3,38 @@
     "name": "Admin",
     "email": "admin@smail.com",
     "role": "Admin",
-    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
+    "password": "$2a$10$1OJtvfGjfdKdTZwjIIS6A./Eircs/501Ph7qDqXdPp1bkKKBjVfWC"
   },
   {
     "name": "Home Goods Store",
     "email": "seller1@smail.com",
-    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
+    "role": "Seller",
+    "password": "$2a$10$1OJtvfGjfdKdTZwjIIS6A./Eircs/501Ph7qDqXdPp1bkKKBjVfWC"
   },
   {
     "name": "Everything Buy Shop",
     "email": "seller2@smail.com",
-    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
+    "role": "Seller",
+    "password": "$2a$10$1OJtvfGjfdKdTZwjIIS6A./Eircs/501Ph7qDqXdPp1bkKKBjVfWC"
   },
   {
     "name": "Bob robbins",
     "email": "bob@smail.com",
-    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
+    "password": "$2a$10$1OJtvfGjfdKdTZwjIIS6A./Eircs/501Ph7qDqXdPp1bkKKBjVfWC"
   },
   {
     "name": "Rich Adams",
     "email": "rich@smail.com",
-    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
+    "password": "$2a$10$1OJtvfGjfdKdTZwjIIS6A./Eircs/501Ph7qDqXdPp1bkKKBjVfWC"
   },
   {
     "name": "Gray Martins",
     "email": "gray@smail.com",
-    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
+    "password": "$2a$10$1OJtvfGjfdKdTZwjIIS6A./Eircs/501Ph7qDqXdPp1bkKKBjVfWC"
   },
   {
     "name": "Gamriel Bardon",
     "email": "gam@smail.com",
-    "password": "$2a$10$Yt.30OBJcOyeLZMMbCVRJeElB/JnPFooMMeWxXktV9KN0hD.ShZy2"
+    "password": "$2a$10$1OJtvfGjfdKdTZwjIIS6A./Eircs/501Ph7qDqXdPp1bkKKBjVfWC"
   }
 ]

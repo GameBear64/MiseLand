@@ -3,7 +3,7 @@ const { sanitizeHTML } = require('../utils');
 exports.normalizeBodyFields = (req, res, next) => {
   // https://www.npmjs.com/package/request_trimmer
   const trimString = input => {
-    if (typeof input === 'string') return sanitizeHTML(Number(input) || input.trim());
+    if (typeof input === 'string') return Number(input) || sanitizeHTML(input?.trim());
 
     if (input !== null && typeof input === 'object') {
       Object.keys(input).forEach(key => {

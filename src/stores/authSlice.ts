@@ -1,3 +1,4 @@
+import { api } from '@api';
 import { createSlice } from '@reduxjs/toolkit';
 
 import { IUser } from '@utils/types';
@@ -16,6 +17,11 @@ const authSlice = createSlice({
     logOut: (state, _action) => {
       state.userInfo = null;
     },
+  },
+  extraReducers: builder => {
+    builder.addMatcher(api.endpoints.check.matchFulfilled, (state, action) => {
+      state.userInfo = action.payload;
+    });
   },
 });
 

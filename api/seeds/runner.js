@@ -10,7 +10,7 @@ module.exports = async () => {
   const usersArray = require('./data/user.json');
 
   usersArray.forEach(user => {
-    // password is 12345678
+    // password is ar5bxb63
     UserModel.updateOne({ email: user.email }, user, { upsert: true }).then(result => {
       if (result.upsertedId) console.log(`Upserted ${user.name}`, result);
     });
@@ -55,11 +55,7 @@ module.exports = async () => {
 
     const { id: categoryId } = await CategoryModel.findOne({ title: product.category });
 
-    ProductModel.updateOne(
-      { title: product.title },
-      { ...product, images: imgIds, category: categoryId, author: authorId },
-      { upsert: true }
-    ).then(result => {
+    ProductModel.updateOne({ title: product.title }, { ...product, images: imgIds, category: categoryId, author: authorId }, { upsert: true }).then(result => {
       if (result.upsertedId) console.log(`Upserted ${product.title}`, result);
     });
   }
