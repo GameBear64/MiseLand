@@ -55,7 +55,11 @@ module.exports = async () => {
 
     const { id: categoryId } = await CategoryModel.findOne({ title: product.category });
 
-    ProductModel.updateOne({ title: product.title }, { ...product, images: imgIds, category: categoryId, author: authorId }, { upsert: true }).then(result => {
+    ProductModel.updateOne(
+      { title: product.title },
+      { ...product, images: imgIds, category: categoryId, author: authorId },
+      { upsert: true }
+    ).then(result => {
       if (result.upsertedId) console.log(`Upserted ${product.title}`, result);
     });
   }

@@ -10,6 +10,7 @@ const Login = lazy(() => import('./Login/Login.tsx'));
 const Home = lazy(() => import('./Home/Home.tsx'));
 const Product = lazy(() => import('./Product/Product.tsx'));
 const Cart = lazy(() => import('./Cart/Cart.tsx'));
+const Profile = lazy(() => import('./SellerProfile/Profile.tsx'));
 
 // Other
 import Layout from '@components/Layout/Layout.tsx';
@@ -41,6 +42,21 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: '/profile',
+        element: (
+          <Guard needs={['Seller']}>
+            <Profile />
+          </Guard>
+        ),
+        errorElement: <ErrorPage />,
+      },
+
+      {
+        path: '/profile/:id',
+        element: <Profile />,
         errorElement: <ErrorPage />,
       },
     ],
