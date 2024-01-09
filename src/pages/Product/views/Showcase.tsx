@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 import StarRating from '@components/StarRating/StarRating';
 
-import { currencyFormatter } from '@utils/utils';
-
 import { ProductContext } from '../Product';
 
 import ActionButtons from './ActionButtons';

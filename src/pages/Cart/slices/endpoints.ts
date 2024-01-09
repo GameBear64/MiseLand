@@ -1,6 +1,6 @@
 import { api } from '@api';
 
-export const cartSlice = api.injectEndpoints({
+export const cartSlice = api.enhanceEndpoints({ addTagTypes: ['Orders'] }).injectEndpoints({
   endpoints: builder => ({
     addToCart: builder.mutation<{ id: string; q: number }, { _id: string; quantity: number }>({
       query: ({ _id, quantity }) => ({
@@ -25,6 +25,7 @@ export const cartSlice = api.injectEndpoints({
         url: '/cart/checkout',
         method: 'POST',
       }),
+      invalidatesTags: ['Orders'],
     }),
   }),
 });

@@ -28,7 +28,7 @@ export default function MediaSelect({ name, rules = {}, styles, label, ...rest }
                       setValue(name, '', { shouldDirty: true, shouldTouch: true });
                     }}
                   >
-                    <Icon icon="delete" />
+                    <Icon icon="delete" clickable />
                   </span>
                 </div>
               </div>

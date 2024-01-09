@@ -24,3 +24,13 @@ export async function readFile(file: Blob) {
     reader.onerror = error => reject(error);
   });
 }
+
+export const timeFormatter = new Intl.DateTimeFormat('en-GB', {
+  dateStyle: 'short',
+});
+
+export const relativeTime = new Intl.RelativeTimeFormat('en', {
+  localeMatcher: 'best fit',
+  numeric: 'always',
+  style: 'long',
+});

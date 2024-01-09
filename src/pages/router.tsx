@@ -11,6 +11,9 @@ const Home = lazy(() => import('./Home/Home.tsx'));
 const Product = lazy(() => import('./Product/Product.tsx'));
 const Cart = lazy(() => import('./Cart/Cart.tsx'));
 const Profile = lazy(() => import('./SellerProfile/Profile.tsx'));
+const Orders = lazy(() => import('./Orders/Orders.tsx'));
+const IncomingOrders = lazy(() => import('./Orders/IncomingOrders.tsx'));
+const Publish = lazy(() => import('./Publish/Publish.tsx'));
 
 // Other
 import Layout from '@components/Layout/Layout.tsx';
@@ -53,10 +56,32 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorPage />,
       },
-
       {
         path: '/profile/:id',
         element: <Profile />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: '/orders',
+        element: <Orders />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: '/orders-incoming',
+        element: (
+          <Guard needs={['Seller']}>
+            <IncomingOrders />
+          </Guard>
+        ),
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: '/publish',
+        element: (
+          <Guard needs={['Seller']}>
+            <Publish />
+          </Guard>
+        ),
         errorElement: <ErrorPage />,
       },
     ],

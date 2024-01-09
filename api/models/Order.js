@@ -29,4 +29,28 @@ const orderSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+orderSchema.methods.advance = async function () {
+  switch (this.status) {
+    case Status.Pending:
+      this.status = Status.Processing;
+      break;
+    case Status.Processing:
+      this.status = Status.Delivering;
+      break;
+    case Status.Delivering:
+      this.status = Status.Completed;
+      break;
+  }
+
+  this.save();
+  return;
+};
+
+orderSchema.methods.decline = async function () {
+  this.status = Status.Declined;
+  this.save();
+
+  return;
+};
+
 exports.OrderModel = mongoose.model('Order', orderSchema);

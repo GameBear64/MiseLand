@@ -51,12 +51,21 @@ export default function NavBar() {
               </Link>
             )}
 
-            <a
-              href="#"
+            <Link
+              to="/orders"
               className="block px-4 py-3 text-sm capitalize text-gray-600 transition-colors duration-200 hover:bg-gray-100"
             >
               Orders
-            </a>
+            </Link>
+
+            {userInfo?.role === 'Seller' && (
+              <Link
+                to="/orders-incoming"
+                className="block px-4 py-3 text-sm capitalize text-gray-600 transition-colors duration-200 hover:bg-gray-100"
+              >
+                Orders - Incoming
+              </Link>
+            )}
 
             <a
               href="#"

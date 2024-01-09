@@ -19,3 +19,16 @@ export interface ICartItem {
   product: IItem;
   quantity: number;
 }
+
+export interface IOrder {
+  _id: string;
+  author?: {
+    _id: string;
+    name: string;
+  };
+  product: IItem;
+  quantity: number;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+}
